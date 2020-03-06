@@ -10,9 +10,19 @@ const Aluno = require('../models/Alunos');
 
 }
 
- function index(req, res){
+async function index(req, res){
+    const {aluno} = req.body;
 
-   // const resultado =  await Aluno.find();
+    function pesquisaAluno(aluno){
+        if(!aluno){
+            return  Aluno.find();
+        } else{
+            const nome = new RegExp(aluno, 'i')
+            return  Aluno.find({nome});
+        }
+    }
+
+    const resultado = await pesquisaAluno(aluno)
     return res.json(resultado);
 
 }
