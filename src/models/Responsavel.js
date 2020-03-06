@@ -9,6 +9,8 @@ const ResponsavelSchema = new mongoose.Schema({
       data: {type: Date},
       notificacao: {type: String}
     }],
+    alunos:{type:[String]},
+    alerta: String,
     createdAt: {type: Date, default: Date.now}
     
 });
