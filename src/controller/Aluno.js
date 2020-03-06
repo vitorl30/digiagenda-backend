@@ -11,7 +11,8 @@ const Aluno = require('../models/Alunos');
 }
 
 async function index(req, res){
-    const {aluno} = req.body;
+    const aluno =  req.query.buscaAluno;
+    //const aluno = buscaAluno;
 
     function pesquisaAluno(aluno){
         if(!aluno){
