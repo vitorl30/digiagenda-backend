@@ -18,6 +18,6 @@ db.once('open', function() {
 app.use(express.json());
 app.use(routes);
 
-app.listen(3000, function () {
-  console.log('Servidor Rodando na porta 3000');
+app.listen(3333, function () {
+  console.log('Servidor Rodando na porta 3333');
 });
