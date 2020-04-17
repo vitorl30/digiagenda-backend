@@ -4,7 +4,7 @@ const routes = require('./router');
 const mongoose = require('mongoose');
 const cors = require('cors')
 
-app.use(cors());
+app.use(cors({origin: 'http://digiagenda.com.br/'}));
 
 mongoose.connect('mongodb+srv://digiagenda:swuhethUdusayac5xamu@digiagenda-6ilvc.mongodb.net/digiagenda?retryWrites=true', {
   useNewUrlParser:true,
