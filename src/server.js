@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const routes = require('./router');
 const mongoose = require('mongoose');
+const cors = require('cors')
 
+app.use(cors());
 
 mongoose.connect('mongodb+srv://digiagenda:swuhethUdusayac5xamu@digiagenda-6ilvc.mongodb.net/digiagenda?retryWrites=true', {
   useNewUrlParser:true,
@@ -14,6 +16,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   console.log("Conectou no banco")
 });
+
 
 app.use(express.json());
 app.use(routes);
